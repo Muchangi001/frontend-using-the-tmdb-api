@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+p{
+    color:white;
+}
+body{
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    background-color: rgb(0, 0, 0);
+}
+.upcoming-container:first-child,
+.popular-container:first-child,
+.top-rated-container:first-child,
+.now-playing-container:first-child{
+    margin-left: 18px;
+}
+.upcoming{
+    transform:scale(1.1);
+    transition:all .5s ease;
+}
+
+.upcoming-container:hover .upcoming-details,
+.now-playing-container:hover .now-playing-details,
+.popular-container:hover .popular-details,
+.top-rated-container:hover .top-rated-details {
+    display: block;
+    position:absolute;
+    background-color: rgba(24, 23, 23, 0.752);
+    top:0;
+    transition:background-color .5s ease;
+    z-index: 1;
+}
+.upcoming-container:hover .upcoming {
+    transform: scale(1);
+    filter:saturate(150%)
+}
+.now-playing{
+    transform: scale(1);
+}
+.now-playing-parent-container,
+.popular-parent-container,
+.top-rated-parent-container{
+    height:400px;
+}
+.now-playing,
+.top-rated,
+.popular{
+    transform:scale(1);
+    transition:transform .5s ease;
+}
+.now-playing-container:hover .now-playing,
+.popular-container:hover .popular,
+.top-rated-container:hover .top-rated{
+    transform: scale(1.2);
+}
+.featured-image{
+    object-fit: fill;
+    height: 600px;
+    width:100%;
+
+}

@@ -1,0 +1,7 @@
+upcoming='https://api.themoviedb.org/3/movie/upcoming?api_key=91a7eeea6e733b77c3e8d9d7c41cc143&language=en-US&page=1'
+
+nowplaying='https://api.themoviedb.org/3/movie/now_playing?api_key=91a7eeea6e733b77c3e8d9d7c41cc143&language=en-US&page=1'
+
+trending='https://api.themoviedb.org/3/movie/popular?api_key=91a7eeea6e733b77c3e8d9d7c41cc143&language=en-US&page=1'
+
+toprated='https://api.themoviedb.org/3/movie/top_rated?api_key=91a7eeea6e733b77c3e8d9d7c41cc143&language=en-US&page=1'
