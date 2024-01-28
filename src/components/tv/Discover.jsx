@@ -5,7 +5,7 @@ const Discover = () => {
   const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
   return (
     <>
-    <p className="upcoming-title">Discover</p>
+    <p className="upcoming-title ml-1">Discover</p>
     <div className="upcoming-parent-container h-72 overflow-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}

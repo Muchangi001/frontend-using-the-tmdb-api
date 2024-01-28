@@ -18,7 +18,7 @@ body{
 .popular-container:first-child,
 .top-rated-container:first-child,
 .now-playing-container:first-child{
-    margin-left: 18px;
+    margin-left: 4px;
 }
 .upcoming{
     transform:scale(1.1);

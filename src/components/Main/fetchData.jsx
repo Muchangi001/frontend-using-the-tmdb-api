@@ -13,7 +13,7 @@ const useFetchData=(url,isMovies)=>{
         fetch(isMovies?`${url}${apiKey}&language=en-US&page=1`:`${url}${apiKey}&include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`)
         .then(response=>{
             if(!response.ok){
-                throw new Error("unable to fetching resources")
+                throw new Error("unable to fetch resources")
              }
              return response.json()
             }

@@ -5,7 +5,7 @@ const UpComing = () => {
   const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,true)
   return (
     <>
-    <p className="upcoming-title">Upcoming</p>
+    <p className="upcoming-title ml-1">Upcoming</p>
     <div className="upcoming-parent-container h-72 overflow-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}

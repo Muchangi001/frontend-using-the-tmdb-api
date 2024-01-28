@@ -4,7 +4,7 @@ const NowPlaying=()=>{
     const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
     return(
         <div>
-        <p className="now-playing-title">Airing Today</p>
+        <p className="now-playing-title ml-1">Airing Today</p>
         <div  className="now-playing-parent-container overflow-x-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}

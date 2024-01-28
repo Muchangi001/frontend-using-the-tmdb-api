@@ -5,7 +5,7 @@ const TopRated=()=>{
     const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,true)
     return(
         <div>
-        <p className="top-rated-title">Top Rated</p>
+        <p className="top-rated-title ml-1">Top Rated</p>
         <div className="top-rated-parent-container overflow-x-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
