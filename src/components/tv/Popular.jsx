@@ -1,13 +1,13 @@
-import useFetchData from "./App/fetchData";
+import useFetchData from "../Main/fetchData";
 
 const Popular=()=>{
-    const url=`https://api.themoviedb.org/3/movie/popular?api_key=`
-    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url)
+    const url=`https://api.themoviedb.org/3/tv/popular?api_key=`
+    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
     return(
         <div>
         <p className="popular-title">Popular</p>
         <div className="popular-parent-container overflow-x-auto flex">
-        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
+        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
         {isLoaded&&!errOccured&&movies.map((movie,index)=>
         <div key={index} className="popular-container rounded-xl overflow-hidden h-full w-72 relative flex-shrink-0 mx-2" >

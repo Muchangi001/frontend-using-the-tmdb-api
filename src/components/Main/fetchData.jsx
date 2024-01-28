@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef } from "react";
 
 //custom hook
-const useFetchData=(url)=>{
+const useFetchData=(url,isMovies)=>{
     const [isLoaded,setIsLoaded]=useState(false);
     const [isLoading,setIsLoading]=useState(true);
     const [movies,setMovies]=useState([]);
@@ -10,10 +10,10 @@ const useFetchData=(url)=>{
     const apiKey="91a7eeea6e733b77c3e8d9d7c41cc143";
 
     useEffect(()=>{
-        fetch(`${url}${apiKey}&language=en-US&page=1`)
+        fetch(isMovies?`${url}${apiKey}&language=en-US&page=1`:`${url}${apiKey}&include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`)
         .then(response=>{
             if(!response.ok){
-                throw new Error("unable to fetch movies")
+                throw new Error("unable to fetching resources")
              }
              return response.json()
             }
@@ -29,7 +29,7 @@ const useFetchData=(url)=>{
             setIsLoaded(false)
             error.current=e.message
         })
-    },[url])
+    },[url,isMovies])
 
     
 

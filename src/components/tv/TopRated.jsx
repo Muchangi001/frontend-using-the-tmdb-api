@@ -1,13 +1,13 @@
-import useFetchData from "./App/fetchData";
+import useFetchData from "../Main/fetchData";
 
 const TopRated=()=>{
-    const url=`https://api.themoviedb.org/3/movie/upcoming?api_key=`
-    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url)
+    const url=`https://api.themoviedb.org/3/tv/top_rated?api_key=`
+    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
     return(
         <div>
         <p className="top-rated-title">Top Rated</p>
         <div className="top-rated-parent-container overflow-x-auto flex">
-        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
+        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
         {isLoaded&&!errOccured&&movies.map((movie,index)=>
         <div key={index} className="top-rated-container rounded-xl overflow-hidden w-72 h-full relative flex-shrink-0 mx-2" >

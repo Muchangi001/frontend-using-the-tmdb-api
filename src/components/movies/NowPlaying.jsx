@@ -1,7 +1,7 @@
-import useFetchData from "./App/fetchData";
+import useFetchData from "../Main/fetchData";
 const NowPlaying=()=>{
     const  url='https://api.themoviedb.org/3/movie/now_playing?api_key='
-    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url)
+    const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,true)
     return(
         <div>
         <p className="now-playing-title">Now Playing</p>

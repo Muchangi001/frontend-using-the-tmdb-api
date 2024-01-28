@@ -1,13 +1,13 @@
-import useFetchData from './App/fetchData';
+import useFetchData from '../Main/fetchData';
 
-const UpComing = () => {
-  const url=`https://api.themoviedb.org/3/movie/upcoming?api_key=`
-  const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url)
+const Discover = () => {
+  const url=`https://api.themoviedb.org/3/discover/tv/?api_key=`
+  const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
   return (
     <>
-    <p className="upcoming-title">Upcoming</p>
+    <p className="upcoming-title">Discover</p>
     <div className="upcoming-parent-container h-72 overflow-auto flex">
-        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
+        {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
         {isLoaded&&!errOccured&&movies.map((movie, index) => (
         <div key={index} className="upcoming-container overflow-hidden h-full w-56 relative flex-shrink-0 rounded-2xl mx-3 " >
@@ -20,4 +20,4 @@ const UpComing = () => {
   );
 };
 
-export default UpComing;
+export default Discover;
