@@ -1,11 +1,11 @@
 import useFetchData from '../Main/fetchData';
 
-const Discover = () => {
-  const url=`https://api.themoviedb.org/3/discover/tv/?api_key=`
+const Trending = () => {
+  const url=`https://api.themoviedb.org/3/trending/tv/day?api_key=`
   const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,false)
   return (
     <>
-    <p className="upcoming-title ml-1">Discover</p>
+    <p className="upcoming-title ml-1">Trending</p>
     <div className="upcoming-parent-container h-72 overflow-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching tv...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
@@ -20,4 +20,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export default Trending;
