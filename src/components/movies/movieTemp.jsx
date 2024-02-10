@@ -1,10 +1,10 @@
-import useFetchData from "../Main/fetchData";
-const NowPlaying=()=>{
-    const  url='https://api.themoviedb.org/3/movie/now_playing?api_key='
+import useFetchData from "../..//fetchData";
+const MovieTemp=({title,endpoint})=>{
+    const  url=`https://api.themoviedb.org/3/movie/${endpoint}`
     const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,true)
     return(
         <div>
-        <p className="now-playing-title ml-1">Now Playing</p>
+        <p className="now-playing-title ml-1">{title}</p>
         <div  className="now-playing-parent-container overflow-x-auto flex">
         {isLoading && <div className="w-full h-full text-white flex items-center justify-center">Fetching movies...</div>}
         {errOccured&&<div className="w-full h-full text-white flex items-center justify-center">{error}</div>}
@@ -18,4 +18,4 @@ const NowPlaying=()=>{
         </div>
     )
 };
-export default NowPlaying;
+export default MovieTemp;

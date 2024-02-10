@@ -4,7 +4,7 @@ import { useEffect, useState,useRef } from "react";
 const useFetchData=(url,isMovies)=>{
     const [isLoaded,setIsLoaded]=useState(false);
     const [isLoading,setIsLoading]=useState(true);
-    const [movies,setMovies]=useState([]);
+    const [content,setMovies]=useState([]);
     const [errOccured,setErr]=useState(null);
     const error=useRef(null);
     const apiKey="91a7eeea6e733b77c3e8d9d7c41cc143";
@@ -29,25 +29,26 @@ const useFetchData=(url,isMovies)=>{
             setIsLoaded(false)
             error.current=e.message
         })
-    },[url,isMovies])
+    },[url])
 
     
 
     const handleUpComing=(data)=>{
         //creating a new json data containing only the backdops,titles and overviews
-        const movies=data.results.map(movie=>{
+        const myContent=data.results.map(content=>{
         return(
             {
-                backdrop:movie.backdrop_path,
-                poster:movie.poster_path,
-                title:movie.title,
-                overview:movie.overview,
-                id:movie.id
+                backdrop:content.backdrop_path,
+                poster:content.poster_path,
+                name:content.name,
+                title:content.title,
+                overview:content.overview,
+                id:content.id
             }
         )
         })
-        setMovies(movies)
+        setMovies(myContent)
       }
-return [isLoaded,isLoading,movies,errOccured,error.current]
+return [isLoaded,isLoading,content,errOccured,error.current]
 }
 export default useFetchData;

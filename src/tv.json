@@ -1,0 +1,18 @@
+[
+    {
+       "title":"Airing Today",
+       "endpoint":"tv/airing_today?api_key="
+    },
+    {
+        "title":"Trending",
+        "endpoint":"trending/tv/day?api_key="
+    },
+    {
+        "title":"Popular",
+        "endpoint":"tv/popular?api_key="
+    },
+    {
+        "title":"Top Rated",
+        "endpoint":"tv/top_rated?api_key="
+    }
+]
