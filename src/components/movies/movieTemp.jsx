@@ -1,4 +1,4 @@
-import useFetchData from "../..//fetchData";
+import useFetchData from "../../fetchData";
 const MovieTemp=({title,endpoint})=>{
     const  url=`https://api.themoviedb.org/3/movie/${endpoint}`
     const[isLoaded,isLoading,movies,errOccured,error]=useFetchData(url,true)
